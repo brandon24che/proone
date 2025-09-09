@@ -1,0 +1,677 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeCity | Urban Safety & Crime Prevention</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+     <link rel="stylesheet" href="bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?
+    
+
+family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+
+        }
+        
+        .navbar {
+            background-color: var(--primary);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        
+
+        .nav-link:hover {
+            color: white;
+        }
+        
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2160&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        
+        .btn-primary {
+
+            background-color: var(--secondary);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline-light {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .feature-card {
+            border-radius: 10px;
+
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .stats-section {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1516642898675-edc2a6a33687?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1970&q=80');
+
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .video-section {
+            background-color: var(--light);
+            padding: 80px 0;
+
+        }
+        
+        .video-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            position: relative;
+        }
+        
+        .testimonial-card:after {
+            content: '\201D';
+
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 60px;
+            color: var(--secondary);
+            font-family: sans-serif;
+        }
+        
+        .contact-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .form-control {
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        
+        footer {
+
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Video slider styles */
+        .video-slider {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .video-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        
+        .video-slide.active {
+            opacity: 1;
+        }
+        
+        .video-slide video {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+        
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+        }
+        
+        .slide-controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10;
+        }
+        
+
+        .slide-controls button {
+            background-color: rgba(255, 255, 255, 0.3);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 10px;
+            transition: all 0.3s;
+        }
+        
+        .slide-controls button:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 80vh;
+                text-align: center;
+
+            }
+            
+            .video-slider {
+                height: 300px;
+            }
+            
+            .stat-number {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-shield-alt me-2"></i>SafeCity
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#strategies">Strategies</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resources">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <h1 class="display-3 fw-bold mb-4">Making Our Cities Safer Together</h1>
+
+                    <p class="lead mb-4">Join the movement to prevent crime and create safer urban environments for everyone. Our comprehensive approach combines technology, community engagement, and proven strategies.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#contact" class="btn btn-primary">Get Involved</a>
+                        <a href="#strategies" class="btn btn-outline-light">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Video Slider Section -->
+    <section class="py-5">
+
+        <div class="container">
+            <h2 class="section-title">Urban Safety in Action</h2>
+            <div class="video-slider">
+                <div class="video-slide active">
+                    <video muted loop>
+                        <source src="two (1).mp4" type="video/mp4">
+                    </video>
+                    <div class="slide-content">
+                        <h3>Neighborhood Watch Programs</h3>
+                        <p>How community involvement reduces crime by up to 40% in participating areas.</p>
+                    </div>
+                </div>
+                <div class="video-slide">
+                    <video muted loop>
+
+                        <source src="two (2).mp4" type="video/mp4">
+                    </video>
+                    <div class="slide-content">
+                        <h3>Community Policing Initiatives</h3>
+                        <p>Building trust between law enforcement and communities for better safety outcomes.</p>
+                    </div>
+                </div>
+                <div class="video-slide">
+                    <video muted loop>
+                        <source src="two (5).mp4" type="video/mp4">
+                    </video>
+
+                    <div class="slide-content">
+                        <h3>Crime Prevention Through Environmental Design</h3>
+                        <p>How urban planning and design can naturally deter criminal activity.</p>
+                    </div>
+                </div>
+                <div class="slide-controls">
+                    <button id="prev-slide"><i class="fas fa-chevron-left"></i></button>
+                    <button id="next-slide"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5 bg-light" id="about">
+        <div class="container">
+
+            <h2 class="section-title">Why Urban Safety Matters</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <p class="lead">Urban areas concentrate opportunities but also face unique safety challenges that require comprehensive solutions.</p>
+                    <p>With over 55% of the world's population living in cities—a number expected to reach 68% by 2050—urban safety has become one of the most critical issues of our time. Crime affects everyone, but disproportionately impacts vulnerable communities.</p>
+                    <p>Effective crime prevention requires a multi-faceted approach that combines technology, community engagement, environmental design, and strategic policing.</p>
+                </div>
+
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1591822059941-5d9732490a8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Community safety meeting" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategies Section -->
+    <section class="py-5" id="strategies">
+        <div class="container">
+            <h2 class="section-title">Proven Crime Prevention Strategies</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="feature-card">
+                        <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="img-fluid" alt="Community Watch">
+                        <div class="p-4">
+                            <h4>Community Watch Programs</h4>
+                            <p>Organized groups of citizens committed to crime and vandalism prevention within their neighborhoods.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="feature-card">
+                        <img src="https://images.unsplash.com/photo-1593113630400-ea4288922497?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="img-fluid" alt="Environmental Design">
+                        <div class="p-4">
+                            <h4>CPTED Principles</h4>
+                            <p>Crime Prevention Through Environmental Design uses urban and architectural design to reduce crime.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <img src="https://images.unsplash.com/photo-1611329855225-091c53f70ea2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" class="img-fluid" alt="Technology Solutions">
+                        <div class="p-4">
+                            <h4>Smart Technology</h4>
+                            <p>Innovative use of surveillance, lighting, and alert systems to prevent and respond to crime.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="40">0</div>
+                        <p>Reduction in Crime with Community Programs</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="72">0</div>
+                        <p>Increase in Feelings of 
+
+Safety with Better Lighting</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="85">0</div>
+                        <p>Of Residents Want More Crime Prevention Education</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="63">0</div>
+                        <p>Faster Police Response with Smart Technology</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Video Resources Section -->
+    <section class="video-section" id="resources">
+        <div class="container">
+            <h2 class="section-title">Educational Resources</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="video-container">
+                        <div class="ratio ratio-16x9">
+                           <video controls>
+                            <sources src="one.mp4"  type="video/mp4"></sources>
+                           </video>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <h4>Personal Safety in Urban Environments</h4>
+
+                        <p>Learn practical strategies to stay safe in city settings, including awareness techniques and personal protection measures.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="video-container">
+                        <div class="ratio ratio-16x9">
+                            <video controls>
+                                <sources src="one.mp4"  type="video/mp4"></sources>
+                               </video>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <h4>Starting a Neighborhood Watch Program</h4>
+                        <p>A step-by-step guide to establishing an effective community watch program in your neighborhood.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get Involved</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Your Name">
+                            </div>
+
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Your Email">
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Subject">
+                        <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h4 class="mb-4">SafeCity</h4>
+                    <p>Dedicated to creating safer urban environments through community engagement, education, and innovative crime prevention strategies.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h4 class="mb-4">Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="#about" class="text-white text-decoration-
+
+none">About</a></li>
+                        <li><a href="#strategies" class="text-white text-decoration-none">Strategies</a></li>
+                        <li><a href="#resources" class="text-white text-decoration-none">Resources</a></li>
+                        <li><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h4 class="mb-4">Connect With Us</h4>
+                    <div class="social-icons d-flex">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-
+
+instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p class="mt-3">info@safecity.org<br>+1 (555) 123-4567</p>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4">
+            <p class="text-center">© 2023 SafeCity. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        // Video slider functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.video-slide');
+            const prevButton = document.getElementById('prev-slide');
+            const nextButton = document.getElementById('next-slide');
+            let currentSlide = 0;
+            
+            // Function to show a specific slide
+            function showSlide(n) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                currentSlide = (n + slides.length) % slides.length;
+                
+
+slides[currentSlide].classList.add('active');
+            }
+            
+            // Event listeners for buttons
+            prevButton.addEventListener('click', () => showSlide(currentSlide - 1));
+            nextButton.addEventListener('click', () => showSlide(currentSlide + 1));
+            
+            // Auto-advance slides every 5 seconds
+            setInterval(() => showSlide(currentSlide + 1), 5000);
+            
+            // Play videos when active
+            slides.forEach(slide => {
+                const video = slide.querySelector('video');
+                slide.addEventListener('mouseenter', () => {
+                    if 
+
+(slide.classList.contains('active')) {
+                        video.play();
+                    }
+                });
+                slide.addEventListener('mouseleave', () => {
+                    video.pause();
+                });
+            });
+            
+            // Animate stats counting
+            const statElements = document.querySelectorAll('.stat-number');
+            const statsSection = document.querySelector('.stats-section');
+            
+            function animateStats() {
+                const sectionPos = statsSection.getBoundingClientRect();
+                if (sectionPos.top < window.innerHeight - 100) {
+
+                    statElements.forEach(stat => {
+                        const target = parseInt(stat.getAttribute('data-count'));
+                        let count = 0;
+                        const duration = 2000; // in ms
+                        const increment = target / (duration / 20);
+                        
+                        const timer = setInterval(() => {
+                            count += increment;
+                            if (count >= target) {
+                                count = target;
+                                clearInterval(timer);
+                            }
+                            stat.textContent = Math.round(count);
+                        }, 20);
+                    });
+                    
+
+                    // Remove the event listener after animation
+                    window.removeEventListener('scroll', animateStats);
+                }
+            }
+            
+            window.addEventListener('scroll', animateStats);
+            
+            // Navbar background change on scroll
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.style.background = 'rgba(44, 62, 80, 0.95)';
+                    navbar.style.padding = '10px 0';
+
+                } else {
+                    navbar.style.background = 'var(--primary)';
+                    navbar.style.padding = '15px 0';
+                }
+            });
+        });
+    </script>
+    <script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>
